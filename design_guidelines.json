@@ -1,0 +1,132 @@
+{
+  "theme_and_colors": {
+    "archetype": "SWISS & HIGH-CONTRAST",
+    "description": "High contrast, functional clarity with a focus on data legibility. Monochrome structural foundation with vibrant Toyota Red as the primary action and alert color.",
+    "colors": {
+      "light": {
+        "background": "0 0% 98%",
+        "foreground": "0 0% 10%",
+        "card": "0 0% 100%",
+        "card-foreground": "0 0% 10%",
+        "popover": "0 0% 100%",
+        "popover-foreground": "0 0% 10%",
+        "primary": "355 92% 48%",
+        "primary-foreground": "0 0% 100%",
+        "secondary": "0 0% 90%",
+        "secondary-foreground": "0 0% 10%",
+        "muted": "0 0% 94%",
+        "muted-foreground": "0 0% 40%",
+        "accent": "0 0% 94%",
+        "accent-foreground": "0 0% 10%",
+        "destructive": "0 84% 60%",
+        "destructive-foreground": "0 0% 100%",
+        "border": "0 0% 85%",
+        "input": "0 0% 85%",
+        "ring": "355 92% 48%"
+      },
+      "dark": {
+        "background": "0 0% 4%",
+        "foreground": "0 0% 98%",
+        "card": "0 0% 6%",
+        "card-foreground": "0 0% 98%",
+        "popover": "0 0% 6%",
+        "popover-foreground": "0 0% 98%",
+        "primary": "355 92% 48%",
+        "primary-foreground": "0 0% 100%",
+        "secondary": "0 0% 15%",
+        "secondary-foreground": "0 0% 98%",
+        "muted": "0 0% 15%",
+        "muted-foreground": "0 0% 65%",
+        "accent": "0 0% 15%",
+        "accent-foreground": "0 0% 98%",
+        "destructive": "0 62.8% 30.6%",
+        "destructive-foreground": "0 0% 98%",
+        "border": "0 0% 15%",
+        "input": "0 0% 15%",
+        "ring": "355 92% 48%"
+      },
+      "status_colors": {
+        "perlu_order": "355 92% 48%",
+        "over_stok": "43 96% 56%",
+        "stop_order": "0 0% 40%",
+        "normal": "142 71% 45%"
+      }
+    }
+  },
+  "typography": {
+    "headings": "Outfit",
+    "body": "IBM Plex Sans",
+    "rules": [
+      "DO NOT use Inter, Roboto, Open Sans, or Lato for headings.",
+      "Headlines > 32px MUST use tracking-tight.",
+      "Overlines / Labels MUST be Uppercase, text-xs, tracking-[0.2em].",
+      "Line Height: leading-none for headers, leading-relaxed for body."
+    ],
+    "scale": {
+      "H1": "text-4xl sm:text-5xl lg:text-6xl",
+      "H2": "text-2xl sm:text-3xl lg:text-4xl",
+      "H3": "text-xl sm:text-2xl",
+      "H4": "text-lg sm:text-xl",
+      "Body": "text-base",
+      "Small": "text-sm",
+      "Labels": "text-xs"
+    }
+  },
+  "layouts": {
+    "protocol": "High Density Grid (For Dashboards)",
+    "rules": [
+      "Base Grid: grid-cols-1 md:grid-cols-3 lg:grid-cols-4",
+      "Gap Strategy: Tight (gap-4 or gap-6).",
+      "Summary Widgets: col-span-1.",
+      "Primary Data (Charts/Tables): col-span-2 row-span-2 or col-span-3.",
+      "Every pixel must be utilized. Use h-full on children to ensure they stretch to match their neighbors.",
+      "Mobile-First: Always start with grid-cols-1."
+    ],
+    "surfaces": {
+      "dashboard_cards": "Flat background, 1px subtle border (border-border), no shadow. Max 8px border-radius (rounded-md). Hover: Slight lift (-translate-y-1), subtle shadow.",
+      "headers": "Solid Background with a hard bottom border for admin layouts."
+    }
+  },
+  "components": {
+    "strategy": "Shadcn/UI heavily customized for a flat, technical, rectangular look.",
+    "forms": "Use Shadcn Input, Select, Checkbox. Never native elements.",
+    "tables": "Dense, crisp borders. Use border-collapse with subtle border-b on rows. Left-align most columns, right-align numeric data.",
+    "charts": "Use Recharts (via Shadcn Chart components). Ensure tooltips are clear and match the high-contrast theme.",
+    "buttons": "Sharp or slightly rounded (rounded-md). Strong contrast on hover (e.g. hover:brightness-90)."
+  },
+  "visual_enhancers": {
+    "icons": "Phosphor Icons (@phosphor-icons/react) for dense data environments.",
+    "textures": "Minimal. Focus on optical clarity and 1px borders.",
+    "animations": "Minimalist micro-interactions. Hover states, subtle entrance staggered animations for lists/tables."
+  },
+  "image_urls": {
+    "login_background": {
+      "url": "https://images.unsplash.com/photo-1644079446600-219068676743?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBjbGVhbiUyMHdhcmVob3VzZSUyMGludmVudG9yeXxlbnwwfHx8fDE3ODM5MjI0NzJ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Large modern warehouse filled with shelves. Use as a half-screen background on the login page with a dark or red overlay."
+    }
+  },
+  "instructions_to_main_agent": [
+    "INSTALL DEPENDENCIES: yarn add @phosphor-icons/react recharts sonner framer-motion clsx tailwind-merge lucide-react",
+    "Apply Outfit font for headings and IBM Plex Sans for body in index.html.",
+    "Update tailwind.config.js to use the HSL variables specified in the design_guidelines theme section.",
+    "Set the CSS variables in index.css to match the light/dark mode colors provided.",
+    "Implement a robust multi-role layout: Sidebar for navigation (Dashboard, Inventory, Orders, Settings) with active state indicators.",
+    "Use Shadcn UI components for Tabs, Tables, Select, and Dialogs. Ensure they are completely functional and styled accurately.",
+    "For the MIP calculation logic, create clear visual indicators (badges) for 'Perlu Order', 'Over Stok', and 'Stop Order'.",
+    "Add test IDs (`data-testid`) to all interactive elements (buttons, inputs, links, table rows).",
+    "Use 'sonner' for toast notifications (e.g., File upload success, MIP calculated)."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy and 1px inner borders.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Always add transitions for specific interactive elements (e.g. transition-colors, transition-transform).",
+    "You MUST NOT center align the app container. Do not add '.App { text-align: center; }'.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 for icons. Use the specified icon library (Phosphor Icons).",
+    "Every interaction needs micro-animations - hover states, transitions, and entrance animations.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations separate good from extraordinary.",
+    "DO NOT use complete `transparent` background in headers, overlays, or any surface that has content under it. Example: Dropdown with transparent background is forbidden.",
+    "Use `sonner` for toast notifications."
+  ]
+}
